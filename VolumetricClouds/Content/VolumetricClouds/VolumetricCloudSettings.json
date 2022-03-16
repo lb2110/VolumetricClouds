@@ -1,0 +1,49 @@
+{
+	"ID": "e779ef044f53aaf2ec08a48dc62beb22",
+	"TypeName": "Game.VolumetricCloudSettings",
+	"EngineBuild": 6228,
+	"Data": {
+	"numStepsLight": 8,
+	"rayOffsetStrength": 10.0,
+	"cloudScale": 0.5,
+	"densityMultiplier": 0.18,
+	"densityOffset": -3.39,
+	"shapeOffset": {
+		"X": 182.44,
+		"Y": 0.0,
+		"Z": 0.0
+	},
+	"heightOffset": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"shapeNoiseWeights": {
+		"X": 0.8,
+		"Y": 0.1,
+		"Z": 0.15,
+		"W": 0.0
+	},
+	"detailNoiseScale": 0.22,
+	"detailNoiseWeight": 2.0,
+	"detailNoiseWeights": {
+		"X": 0.7,
+		"Y": 0.2,
+		"Z": 0.5
+	},
+	"detailOffset": {
+		"X": 52.0,
+		"Y": 0.0,
+		"Z": 0.0
+	},
+	"lightAbsorptionThroughCloud": 0.3,
+	"lightAbsorptionTowardSun": 0.0,
+	"darknessThreshold": 0.167550266,
+	"forwardScattering": 0.464474976,
+	"backScattering": 0.33,
+	"baseBrightness": 0.247083664,
+	"phaseFactor": 0.488,
+	"timeScale": 1.0,
+	"baseSpeed": 0.0,
+	"detailSpeed": 1.0
+}
+}

@@ -1,0 +1,20 @@
+{
+	"settings": {
+		"typescript.tsc.autoDetect": "off",
+		"npm.autoDetect": "off",
+		"gulp.autoDetect": "off",
+		"jake.autoDetect": "off",
+		"grunt.autoDetect": "off",
+		"omnisharp.defaultLaunchSolution": "VolumetricClouds.sln"
+	},
+	"folders": [
+		{
+			"name": "VolumetricClouds",
+			"path": "."
+		},
+		{
+			"name": "Flax",
+			"path": "F:\\FlaxEngine\\master_branch"
+		}
+	]
+}

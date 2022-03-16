@@ -1,0 +1,91 @@
+{
+	"ID": "25c3630d4937230dc4c03f83a578fe9b",
+	"TypeName": "Game.WorleyNoiseSettings",
+	"EngineBuild": 6228,
+	"Data": {
+	"shapeSettings": [
+		{
+			"seed": 0,
+			"numDivisionsA": 3,
+			"numDivisionsB": 7,
+			"numDivisionsC": 11,
+			"persistence": 0.65,
+			"tile": 1,
+			"invert": true,
+			"Enable": true
+		},
+		{
+			"seed": 1,
+			"numDivisionsA": 9,
+			"numDivisionsB": 15,
+			"numDivisionsC": 23,
+			"persistence": 0.33,
+			"tile": 1,
+			"invert": true,
+			"Enable": true
+		},
+		{
+			"seed": 2,
+			"numDivisionsA": 13,
+			"numDivisionsB": 28,
+			"numDivisionsC": 42,
+			"persistence": 0.58,
+			"tile": 1,
+			"invert": true,
+			"Enable": true
+		},
+		{
+			"seed": 3,
+			"numDivisionsA": 20,
+			"numDivisionsB": 31,
+			"numDivisionsC": 45,
+			"persistence": 0.74,
+			"tile": 1,
+			"invert": true,
+			"Enable": true
+		}
+	],
+	"detailSettings": [
+		{
+			"seed": 0,
+			"numDivisionsA": 8,
+			"numDivisionsB": 18,
+			"numDivisionsC": 20,
+			"persistence": 0.76,
+			"tile": 1,
+			"invert": true,
+			"Enable": true
+		},
+		{
+			"seed": 1,
+			"numDivisionsA": 13,
+			"numDivisionsB": 24,
+			"numDivisionsC": 28,
+			"persistence": 0.5,
+			"tile": 1,
+			"invert": true,
+			"Enable": true
+		},
+		{
+			"seed": 2,
+			"numDivisionsA": 20,
+			"numDivisionsB": 28,
+			"numDivisionsC": 32,
+			"persistence": 0.5,
+			"tile": 1,
+			"invert": true,
+			"Enable": true
+		},
+		{
+			"seed": 0,
+			"numDivisionsA": 5,
+			"numDivisionsB": 10,
+			"numDivisionsC": 15,
+			"persistence": 0.5,
+			"tile": 1,
+			"invert": true,
+			"Enable": false
+		}
+	]
+}
+}
