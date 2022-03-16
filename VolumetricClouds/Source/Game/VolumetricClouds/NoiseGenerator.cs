@@ -13,7 +13,7 @@ namespace Game
     {
 
         [EditorOrder(1), EditorDisplay(name: "Live Rendering"), ReadOnly]
-        public bool LiveRender = false;
+        public bool LiveRender = false; //LiveRender to working
         [EditorOrder(2), EditorDisplay(name: "Compute Shader")]
         public Shader noiseCompute;
         [EditorOrder(3), EditorDisplay(name: "Shape Resolution")]
@@ -73,12 +73,12 @@ namespace Game
                 return;
 
             var rt = new RenderTask();
-            rt.Render += Rt_Render;
+            rt.Render += _rt_Render;
         }
 
-        private void Rt_Render(RenderTask rt, GPUContext context)
+        private void _rt_Render(RenderTask rt, GPUContext context)
         {
-            if (LiveRender)
+            if (LiveRender) //LiveRender to working
             {
                 if (JSON_settings)
                 {
@@ -126,17 +126,17 @@ namespace Game
 
             if (!LiveRender)
             {
-                rt.Render -= Rt_Render;
+                rt.Render -= _rt_Render;
             }
         }
 
         private unsafe bool _Generate(GPUContext context, GPUTexture texture, WorleyNoiseSettingsStruct settings, Vector4 channelMask)
         {
-            GPUBuffer pointsA = UpdateWorley(settings.numDivisionsA);
-            GPUBuffer pointsB = UpdateWorley(settings.numDivisionsB);
-            GPUBuffer pointsC = UpdateWorley(settings.numDivisionsC);
+            GPUBuffer pointsA = _UpdateWorley(settings.numDivisionsA);
+            GPUBuffer pointsB = _UpdateWorley(settings.numDivisionsB);
+            GPUBuffer pointsC = _UpdateWorley(settings.numDivisionsC);
 
-            var minMax = CreateMinMaxBuffer(new int[] { int.MaxValue, 0 }, sizeof(int));
+            var minMax = _CreateMinMaxBuffer(new int[] { int.MaxValue, 0 }, sizeof(int));
 
             context.BindSR(0, (GPUTexture)null);
             context.BindUA(0, null);
@@ -182,12 +182,12 @@ namespace Game
             return true;
         }
 
-        GPUBuffer UpdateWorley(int div)
+        private GPUBuffer _UpdateWorley(int div)
         {
             var prng = new System.Random(0);
-            return CreateWorleyPointsBuffer(prng, div);
+            return _CreateWorleyPointsBuffer(prng, div);
         }
-        GPUBuffer CreateWorleyPointsBuffer(System.Random prng, int numCellsPerAxis)
+        private GPUBuffer _CreateWorleyPointsBuffer(System.Random prng, int numCellsPerAxis)
         {
             var points = new Vector3[numCellsPerAxis * numCellsPerAxis * numCellsPerAxis];
             float cellSize = 1f / numCellsPerAxis;
@@ -209,10 +209,10 @@ namespace Game
                     }
                 }
             }
-            return CreatePointsBuffer(points, sizeof(float) * 3);
+            return _CreatePointsBuffer(points, sizeof(float) * 3);
         }
 
-        unsafe GPUBuffer CreatePointsBuffer(Vector3[] data, int stride)
+        private unsafe GPUBuffer _CreatePointsBuffer(Vector3[] data, int stride)
         {
             var buffer = new GPUBuffer();
             fixed (Vector3* ptr = data)
@@ -225,7 +225,7 @@ namespace Game
             return buffer;
         }
 
-        unsafe GPUBuffer CreateMinMaxBuffer(int[] data, int stride)
+        private unsafe GPUBuffer _CreateMinMaxBuffer(int[] data, int stride)
         {
             var buffer = new GPUBuffer();
             fixed (int* ptr = data)

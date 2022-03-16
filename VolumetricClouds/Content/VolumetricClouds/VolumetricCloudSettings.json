@@ -36,8 +36,8 @@
 		"Z": 0.0
 	},
 	"lightAbsorptionThroughCloud": 0.3,
-	"lightAbsorptionTowardSun": 0.0,
-	"darknessThreshold": 0.167550266,
+	"lightAbsorptionTowardSun": 1.21,
+	"darknessThreshold": 0.6150915,
 	"forwardScattering": 0.464474976,
 	"backScattering": 0.33,
 	"baseBrightness": 0.247083664,

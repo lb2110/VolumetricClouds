@@ -207,11 +207,11 @@ namespace Game
                 return;
             }
 
-            //Clouds container bounds
+            //cloud container bounds
             Vector3 containerBoundsMin = container.Position - container.LocalScale / 2;
             Vector3 containerBoundsMax = container.Position + container.LocalScale / 2;
 
-            //Calculations to display cloud container on screen
+            //needed to display cloud container on screen
             var viewProjection = Matrix.Multiply(Matrix.Identity, renderContext.View.View);
             Matrix wvpMatrix = Matrix.Multiply(viewProjection, renderContext.View.Projection);
             Matrix.Transpose(ref wvpMatrix, out var ViewProjectionMatrix);

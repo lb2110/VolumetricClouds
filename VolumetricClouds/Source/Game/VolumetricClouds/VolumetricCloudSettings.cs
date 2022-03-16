@@ -27,7 +27,7 @@ namespace Game
         public Vector4 shapeNoiseWeights = new Vector4(0.8f, 0.1f, 0.15f, 0f);
         [EditorOrder(13), EditorDisplay("Detail")]
         public float detailNoiseScale = 0.22f;
-        [EditorOrder(14), EditorDisplay("Detail")]
+        [EditorOrder(14), EditorDisplay("Detail")] //TEst
         public float detailNoiseWeight = 2f;
         [EditorOrder(15), EditorDisplay("Detail")]
         public Vector3 detailNoiseWeights = new Vector3(0.7f, 0.2f, 0.5f);
@@ -36,9 +36,9 @@ namespace Game
         [EditorOrder(17), EditorDisplay("Lightning")]
         public float lightAbsorptionThroughCloud = 0.3f;
         [EditorOrder(18), EditorDisplay("Lightning")]
-        public float lightAbsorptionTowardSun = 0f;
+        public float lightAbsorptionTowardSun = 1.21f;
         [Range(0, 1), EditorOrder(19), EditorDisplay("Lightning")]
-        public float darknessThreshold = 0.15f;
+        public float darknessThreshold = 0.61f;
         [Range(0, 1), EditorOrder(20), EditorDisplay("Lightning")]
         public float forwardScattering = .811f;
         [Range(0, 1), EditorOrder(21), EditorDisplay("Lightning")]

@@ -25,8 +25,6 @@ namespace Game
             layout.Space(20);
             var button_generate = layout.Button("Generate Textures", new Color(0, 122, 204));
 
-            // Use Values[] to access the script or value being edited.
-            // It is an array, because custom editors can edit multiple selected scripts simultaneously.
             button_generate.Button.Clicked += () => noisegen.GenerateTextures();
         }
     }

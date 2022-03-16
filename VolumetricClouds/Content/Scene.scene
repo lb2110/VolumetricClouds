@@ -274,10 +274,10 @@
 	"cam": "b0d72c3746caebca055e1f921ca21c7c",
 	"container": "69f2d2c042e5d60848e724b895dbadaa",
 	"sun": "deecf0894777293a4f478dadacf2a6f8",
-	"BlueNoise": "3c8a41db48952c011560009d8b6b9156",
+	"BlueNoise": "cd7326d648ea23bbd277868b51697fde",
 	"noiseGenerator": "2f80c7eb4a8887506aa66ea7515f4d9b",
 	"JSON_Settings": "e779ef044f53aaf2ec08a48dc62beb22",
-	"Shader": "00000ce45ab4007c0000005600000073"
+	"Shader": "a365f19b43e85e669470faa08f426246"
 }
 		},
 		{
@@ -291,7 +291,7 @@
 			"TypeName": "Game.NoiseGenerator",
 			"ParentID": "2f80c7eb4a8887506aa66ea7515f4d9b",
 			"V": {
-	"noiseCompute": "00000b54dbd245a30000005600000065",
+	"noiseCompute": "561ee656487a4fd5c160debee696b2b0",
 	"JSON_settings": "25c3630d4937230dc4c03f83a578fe9b",
 	"settings": {
 		"shapeSettings": [
@@ -379,8 +379,8 @@
 			}
 		]
 	},
-	"ShapeTexture": "976b9dca4944155daed3209ae47ad903",
-	"DetailTexture": "736c816b4490e4bb42364ab952211156"
+	"ShapeTexture": "f95c1ebe46f6edbd6d981a81ab1863e2",
+	"DetailTexture": "9c09700c40a3f417b4c3148c2357e643"
 }
 		},
 		{
@@ -394,7 +394,7 @@
 			"TypeName": "Game.NoiseView",
 			"ParentID": "734a77cb42175d688cd8e49abaa2660b",
 			"V": {
-	"SliceCompute": "00000af0fedfdb800000005600000065",
+	"SliceCompute": "12f1ac904ca270d06c5b8c9653a73ac0",
 	"gc": false,
 	"bc": false,
 	"ac": false,

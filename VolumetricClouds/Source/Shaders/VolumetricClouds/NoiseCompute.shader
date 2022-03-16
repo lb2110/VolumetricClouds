@@ -93,7 +93,7 @@ float worley(StructuredBuffer<float3> points, int numCells, float3 samplePos) {
     }
     return sqrt(minSqrDst);
 }
-// Compute shader blur function for horizontal pass
+
 META_CS(true, FEATURE_LEVEL_SM5)
 [numthreads(8, 8, 8)]
 void CS_Generate(uint3 id : SV_DispatchThreadID)
@@ -117,12 +117,6 @@ void CS_Generate(uint3 id : SV_DispatchThreadID)
     InterlockedMin(minMax[0],val);
     InterlockedMax(minMax[1],val);
 
-	// float value = 1.0f;
-	// if (invertNoise == true) {
-	// 	value = ((float)numCellsA / 10.0f) * channelMask.w;
-	// }
-	//Output[id.xyz] = float4( pos.x, pos.y * value, 0.0f, 0.0f);
-	//Output[id.xy] = float4( pos.x, pos.y, 0.0f, 0.0f);
 	Output[id] = Output[id] * (1-channelMask) + noiseSum * channelMask;
 }
 

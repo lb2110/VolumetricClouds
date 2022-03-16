@@ -62,6 +62,7 @@ float remap(float v, float minOld, float maxOld, float minNew, float maxNew) {
 	return minNew + (v-minOld) * (maxNew - minNew) / (maxOld-minOld);
 }
 
+//Function ported from unity
 float LinearEyeDepth( float z , float near, float far){
     return far * near / ((near - far) * z + far);
 }
@@ -90,10 +91,6 @@ float phase(float a) {
 	float hgBlend = hg(a,phaseParams.x) * (1-blend) + hg(a,-phaseParams.y) * blend;
 	return phaseParams.z + hgBlend*phaseParams.w;
 }
-
-// bool isZero(float var) {
-// 	return abs(var) < 1.0f * (float)(pow(10,-6));
-// }
 
 
 float2 rayBoxDst(float3 boundsMin, float3 boundsMax, float3 rayOrigin, float3 invRaydir) {
@@ -213,7 +210,7 @@ float lightmarch(float3 position) {
 
 	for (int step = 0; step < numStepsLight; step ++) {
 		position += dirToLight * stepSize;
-		totalDensity += max(0, sampleDensity(position) * stepSize);
+		totalDensity += max(0, sampleDensity2(position) * stepSize);
 	}
 
 	float transmittance = exp(-totalDensity * lightAbsorptionTowardSun);
@@ -225,14 +222,6 @@ META_PS(true, FEATURE_LEVEL_ES2)
 float4 PS_Fullscreen(Quad_VS2PS input) : SV_Target
 {
 	float4 col = mainTex.Sample(samplerInput, input.TexCoord);
-	// float4 coloff = mainTex.Sample(state, input.TexCoord - 0.002);
-
-	// float c = (float)input.Position.x;
-
-	// if(length(col - coloff) > 0.1) {
-	// 	col = 0;
-	// }
-	// return Color + c/1000;
 
 	float3 nearPoint = float3((float)input.Position.x, (float)input.Position.y, 0.0f);
 	float3 farPoint = float3((float)input.Position.x, (float)input.Position.y, 1.0f);
@@ -253,23 +242,6 @@ float4 PS_Fullscreen(Quad_VS2PS input) : SV_Target
 	float dstInsideBox = rayBoxInfo.y;
 
 
-	// bool rayHitBox = dstInsideBox > 0 && dstToBox < sceneDepth;
-	// if (rayHitBox) {
-	//  	col = 0;
-	// }
-	// float dstTravelled = 0;
-	// float stepSize = dstInsideBox / numStepsLight;
-	// float dstLimit = min(sceneDepth - dstToBox, dstInsideBox);
-
-	// float totalDensity = 0;
-	// while (dstTravelled < dstLimit) {
-	// 	float3 rayPos = rayPosition + rayDir * (dstToBox + dstTravelled);
-	// 	totalDensity += sampleDensity2(rayPos) * stepSize;
-	// 	dstTravelled += stepSize;
-	// }
-	// float transmittance = exp(-totalDensity);
-	// return col * transmittance + Color.y;
-	//return float4(col.x * shapeNoiseWeights.x , col.y, col.z + Color.y ,0);;
 	float3 entryPoint = rayPosition + rayDir * dstToBox;
 
 	// random starting offset (makes low-res results noisy rather than jagged/glitchy, which is nicer)
